@@ -10,163 +10,312 @@ import clown8 from "./assets/clowns/clown8.jpeg"
 import clown9 from "./assets/clowns/clown9.jpeg"
 import clown10 from "./assets/clowns/clown10.jpeg"
 import { useState } from "react"
+import { createPortal } from "react-dom"
+export function Lose(){
+    return createPortal(<div id="losewarning">
+    <p id="Losing">You Lose!</p>
+</div>,document.body)
 
+   
+}
 let clicked=[]
 export function App(){
     const[score,setscore]=useState(0)
     const[high,sethigh]=useState(0)
    
     let images=[ 
-        <img onClick={()=>{
-            console.log(clicked)
+        <img onClick={(event)=>{
+       
+            
+         
             if(clicked.includes('1')){
-                alert('You Lose')
-               if(score>high){
-sethigh(score)
+                event.target.id="lose"
+                document.getElementById('Losing').style.display="block"
+                
+                onanimationend=()=>{ 
 
-}
+                if(score>high){
+ sethigh(score)
+event.target.id=""
+ setscore(0)
+ clicked=[]
+ document.getElementById('Losing').style.display="none"
+}else {
+               
+
+
                 setscore(0)
                 clicked=[]
+                document.getElementById('Losing').style.display="none"
+                      }  }
             }else {
+                event.target.id='clicked'
+                onanimationend=()=>{
                 clicked.push('1')
                 setscore(score+1)
                 Imaging()
-            } 
+            } }
         }} className="card" src={clown1} value="1" key={1} alt="" />,
-        <img onClick={()=>{
+         <img onClick={(event)=>{
             if(clicked.includes('2')){
-                alert('You Lose')
-                if(score>high){
-sethigh(score)
+                event.target.id="lose"
+                document.getElementById('Losing').style.display="block"
+                
+                onanimationend=()=>{ 
 
-}
-                 setscore(0)
+                if(score>high){
+ sethigh(score)
+event.target.id=""
+ setscore(0)
+ clicked=[]
+ document.getElementById('Losing').style.display="none"
+}else {
+               
+
+
+                setscore(0)
                 clicked=[]
+                document.getElementById('Losing').style.display="none"
+                      }  }
             }else {
+                event.target.id='clicked'
+                onanimationend=()=>{
                 clicked.push('2')
                 setscore(score+1)
                 Imaging()
-            } 
+            } }
         }}className="card"  src={clown2} value="2" key={2} alt="" />,
-        <img onClick={()=>{
+         <img onClick={(event)=>{
             if(clicked.includes('3')){
-                alert('You Lose')
-                if(score>high){
-sethigh(score)
+                event.target.id="lose"
+                document.getElementById('Losing').style.display="block"
+                
+                onanimationend=()=>{ 
 
-}
-                 setscore(0)
+                if(score>high){
+ sethigh(score)
+event.target.id=""
+ setscore(0)
+ clicked=[]
+ document.getElementById('Losing').style.display="none"
+}else {
+               
+
+
+                setscore(0)
                 clicked=[]
+                document.getElementById('Losing').style.display="none"
+                      }  }
             }else {
+                event.target.id='clicked'
+                onanimationend=()=>{
                 clicked.push('3')
                 setscore(score+1)
                 Imaging()
-            } 
+            } }
         }}className="card"  src={clown3} value="3" key={3}  alt="" />,
-        <img onClick={()=>{
+         <img onClick={(event)=>{
             if(clicked.includes('4')){
-                alert('You Lose')
-                if(score>high){
-sethigh(score)
+                event.target.id="lose"
+                document.getElementById('Losing').style.display="block"
+                
+                onanimationend=()=>{ 
 
-}
-                 setscore(0)
+                if(score>high){
+ sethigh(score)
+event.target.id=""
+ setscore(0)
+ clicked=[]
+ document.getElementById('Losing').style.display="none"
+}else {
+               
+
+
+                setscore(0)
                 clicked=[]
+                document.getElementById('Losing').style.display="none"
+                      }  }
             }else {
+                event.target.id='clicked'
+                onanimationend=()=>{
                 clicked.push('4')
                 setscore(score+1)
                 Imaging()
-            } 
+            } }
         }}className="card"  src={clown4} value="4" key={4} alt="" />,
-        <img onClick={()=>{
+         <img onClick={(event)=>{
             if(clicked.includes('5')){
-                alert('You Lose')
-                if(score>high){
-sethigh(score)
+                event.target.id="lose"
+                document.getElementById('Losing').style.display="block"
+                
+                onanimationend=()=>{ 
 
-}
-                 setscore(0)
+                if(score>high){
+ sethigh(score)
+event.target.id=""
+ setscore(0)
+ clicked=[]
+ document.getElementById('Losing').style.display="none"
+}else {
+               
+
+
+                setscore(0)
                 clicked=[]
+                document.getElementById('Losing').style.display="none"
+                      }  }
             }else {
+                event.target.id='clicked'
+                onanimationend=()=>{
                 clicked.push('5')
                 setscore(score+1)
                 Imaging()
-            } 
+            } }
         }}className="card"  src={clown5} value="5"  key={5} alt="" />,
-        <img onClick={()=>{
+         <img onClick={(event)=>{
             if(clicked.includes('6')){
-                alert('You Lose')
-                if(score>high){
-sethigh(score)
+                event.target.id="lose"
+                document.getElementById('Losing').style.display="block"
+                
+                onanimationend=()=>{ 
 
-}
-                 setscore(0)
+                if(score>high){
+ sethigh(score)
+event.target.id=""
+ setscore(0)
+ clicked=[]
+ document.getElementById('Losing').style.display="none"
+}else {
+               
+
+
+                setscore(0)
                 clicked=[]
+                document.getElementById('Losing').style.display="none"
+                      }  }
             }else {
+                event.target.id='clicked'
+                onanimationend=()=>{
                 clicked.push('6')
                 setscore(score+1)
                 Imaging()
-            } 
+            } }
         }}className="card"  src={clown6} value="6" key={6} alt="" />,
-        <img onClick={()=>{
+        <img onClick={(event)=>{
             if(clicked.includes('7')){
-                alert('You Lose')
-                if(score>high){
-sethigh(score)
+                event.target.id="lose"
+                document.getElementById('Losing').style.display="block"
+                
+                onanimationend=()=>{ 
 
-}
-                 setscore(0)
+                if(score>high){
+ sethigh(score)
+event.target.id=""
+ setscore(0)
+ clicked=[]
+ document.getElementById('Losing').style.display="none"
+}else {
+               
+
+
+                setscore(0)
                 clicked=[]
+                document.getElementById('Losing').style.display="none"
+                      }  }
             }else {
+                event.target.id='clicked'
+                onanimationend=()=>{
                 clicked.push('7')
                 setscore(score+1)
                 Imaging()
-            } 
+            } }
         }}className="card"  src={clown7} value="7" key={7} alt="" />,
-        <img onClick={()=>{
+         <img onClick={(event)=>{
             if(clicked.includes('8')){
-                alert('You Lose')
-                if(score>high){
-sethigh(score)
+                event.target.id="lose"
+                document.getElementById('Losing').style.display="block"
+                
+                onanimationend=()=>{ 
 
-}
-                 setscore(0)
+                if(score>high){
+ sethigh(score)
+event.target.id=""
+ setscore(0)
+ clicked=[]
+ document.getElementById('Losing').style.display="none"
+}else {
+               
+
+
+                setscore(0)
                 clicked=[]
+                document.getElementById('Losing').style.display="none"
+                      }  }
             }else {
+                event.target.id='clicked'
+                onanimationend=()=>{
                 clicked.push('8')
                 setscore(score+1)
                 Imaging()
-            } 
+            } }
         }}className="card"  src={clown8} value="8" key={8} alt="" />,
-        <img onClick={()=>{
+         <img onClick={(event)=>{
             if(clicked.includes('9')){
-                alert('You Lose')
-                if(score>high){
-sethigh(score)
+                event.target.id="lose"
+                document.getElementById('Losing').style.display="block"
+                
+                onanimationend=()=>{ 
 
-}
-                 setscore(0)
+                if(score>high){
+ sethigh(score)
+event.target.id=""
+ setscore(0)
+ clicked=[]
+ document.getElementById('Losing').style.display="none"
+}else {
+               
+
+
+                setscore(0)
                 clicked=[]
+                document.getElementById('Losing').style.display="none"
+                      }  }
             }else {
+                event.target.id='clicked'
+                onanimationend=()=>{
                 clicked.push('9')
                 setscore(score+1)
                 Imaging()
-            } 
+            } }
         }}className="card" src={clown9} value="9" key={9} alt="" />,
-        <img onClick={()=>{
+         <img onClick={(event)=>{
             if(clicked.includes('10')){
-                alert('You Lose')
-                if(score>high){
-sethigh(score)
+                event.target.id="lose"
+                document.getElementById('Losing').style.display="block"
+                
+                onanimationend=()=>{ 
 
-}
-                 setscore(0)
+                if(score>high){
+ sethigh(score)
+event.target.id=""
+ setscore(0)
+ clicked=[]
+ document.getElementById('Losing').style.display="none"
+}else {
+               
+
+
+                setscore(0)
                 clicked=[]
+                document.getElementById('Losing').style.display="none"
+                      }  }
             }else {
+                event.target.id='clicked'
+                onanimationend=()=>{
                 clicked.push('10')
                 setscore(score+1)
                 Imaging()
-            } 
+            } }
         }}className="card"  src={clown10} value="10"  key={10} alt="" />
     ]
 
